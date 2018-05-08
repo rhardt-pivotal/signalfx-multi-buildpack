@@ -4,10 +4,11 @@ set -e
 echo "curr dir: $(pwd)"
 echo "contents: $(ls)"
 echo "vars"
-echo "$1"
-echo "$2"
 
-ls -al $1
+bin_dir=$(cd $(dirname $0); pwd) # absolute path
+root_dir=$(dirname $bin_dir)
+echo $root_dir
+ls -al $root_dir
 
 
 cp $1/config.yml $3/$4
