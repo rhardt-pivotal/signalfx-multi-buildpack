@@ -45,7 +45,7 @@ cat <<EOF >> $3/$4/config.yml
 name: signalfx-multi-buildpack
 config:
   java_opts:
-    preformatted_options: ["-Dscript_2=\$(\$HOME/../deps/$4/.profile.d/run-collectd.sh)"]
+    preformatted_options: ["-Dcollect_d_start_output=\$(\$HOME/../deps/$4/.profile.d/run-collectd.sh)"]
 EOF
 
 

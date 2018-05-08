@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 BUNDLE_DIR=/home/vcap/deps/0/collectd
 CONFIG_DIR=/home/vcap/app/.signalfx
@@ -28,5 +28,6 @@ do
   echo "Detected configuration file $(basename $conf)."
   cp $conf $BUNDLE_DIR/etc/managed_config/
 done
-echo "-Dtried_to_run_collectd=true"
-bash $BUNDLE_DIR/run.sh
+echo "hopeful"
+LOG=/tmp/collectd-start.log
+bash $BUNDLE_DIR/run.sh >>$LOG 2>&1
