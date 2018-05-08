@@ -1,3 +1,0 @@
-name: signalfx-multi-buildpack
-config:
-  val1: true
