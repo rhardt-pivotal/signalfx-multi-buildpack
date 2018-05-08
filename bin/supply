@@ -3,6 +3,12 @@ set -e
 
 echo "curr dir: $(pwd)"
 echo "contents: $(ls)"
+echo "vars"
+echo "$1"
+echo "$2"
+
+ls -al $1
+
 
 cp config.yml $3/$4
 
