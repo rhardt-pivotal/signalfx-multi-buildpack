@@ -29,7 +29,7 @@ chmod +x $3/$4/.profile.d/run-collectd.sh
 
 if [ -z ${SIGFX_TGZ_URI+x} ]
 then
-  SIGFX_TGZ_URI=https://github.com/signalfx/collectd-build-bundle/releases/download/v5.8.0-sfx0-1/collectd.tar.gz
+  SIGFX_TGZ_URI=https://github.com/signalfx/collectd-build-bundle/releases/download/v5.7.2-sfx0-1/collectd-bundle-5.7.2-sfx0-1.tar.gz
 fi
 
 
