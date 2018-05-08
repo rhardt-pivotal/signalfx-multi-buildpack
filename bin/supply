@@ -11,7 +11,7 @@ echo $root_dir
 ls -al $root_dir
 
 
-cp $1/config.yml $3/$4
+cp $root_dir/config.yml $3/$4
 
 
 if [ -z ${SIGFX_TGZ_URI+x} ]
