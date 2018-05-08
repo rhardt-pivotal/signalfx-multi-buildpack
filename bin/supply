@@ -10,7 +10,7 @@ echo "$2"
 ls -al $1
 
 
-cp config.yml $3/$4
+cp $1/config.yml $3/$4
 
 
 if [ -z ${SIGFX_TGZ_URI+x} ]
