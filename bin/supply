@@ -20,11 +20,12 @@ echo $root_dir
 ls -al $root_dir
 
 
-chmod +x $3/$4/.profile.d/run-collectd.sh
+
 
 
 mkdir -p $3/$4/.profile.d
 cp $root_dir/run-collectd.sh $3/$4/.profile.d
+chmod +x $3/$4/.profile.d/run-collectd.sh
 
 if [ -z ${SIGFX_TGZ_URI+x} ]
 then
