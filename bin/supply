@@ -1,18 +1,30 @@
 #!/bin/sh
 set -e
 
+$SIGNALFX_ACCESS_TOKEN
+
+if [ -z ${SIGNALFX_ACCESS_TOKEN} ]
+then
+  echo "SIGNALFX_ACCESS_TOKEN env var not set"
+  exit 0
+fi
+
 echo "curr dir: $(pwd)"
 echo "contents: $(ls)"
 echo "vars"
 
 bin_dir=$(cd $(dirname $0); pwd) # absolute path
 root_dir=$(dirname $bin_dir)
+
+
 echo $root_dir
 ls -al $root_dir
 
 
 cp $root_dir/config.yml $3/$4
 
+mkdir -p $3/$4/.profile.d
+cp $root_dir/run-collectd.sh $3/$4/.profile.d
 
 if [ -z ${SIGFX_TGZ_URI+x} ]
 then
@@ -21,6 +33,8 @@ fi
 
 
 wget $SIGFX_TGZ_URI --quiet -O $3/$4/sigfx.tgz
+cd $3/$4
 tar xvfz $3/$4/sigfx.tgz
+
 
 
