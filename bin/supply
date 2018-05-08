@@ -20,7 +20,6 @@ echo $root_dir
 ls -al $root_dir
 
 
-cp $root_dir/config.yml $3/$4
 chmod +x $3/$4/.profile.d/run-collectd.sh
 
 
