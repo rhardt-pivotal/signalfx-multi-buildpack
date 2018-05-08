@@ -1,12 +1,11 @@
 #!/bin/sh
 set -e
 
-$SIGNALFX_ACCESS_TOKEN
-
-if [ -z ${SIGNALFX_ACCESS_TOKEN} ]
-then
+if [[ -z "${SIGNALFX_ACCESS_TOKEN}" ]]; then
   echo "SIGNALFX_ACCESS_TOKEN env var not set"
   exit 0
+else
+  echo "found SIGNALFX_ACCESS_TOKEN, continuing with staging"
 fi
 
 echo "curr dir: $(pwd)"
