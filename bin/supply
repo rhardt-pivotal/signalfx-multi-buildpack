@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+echo "curr dir: $(pwd)"
+echo "contents: $(ls)"
+
+cp config.yml $3/$4
+
+
+if [ -z ${SIGFX_TGZ_URI+x} ]
+then
+  SIGFX_TGZ_URI=https://github.com/signalfx/collectd-build-bundle/releases/download/v5.8.0-sfx0-1/collectd.tar.gz
+fi
+
+
+wget $SIGFX_TGZ_URI --quiet -O $3/$4/sigfx.tgz
+tar xvfz $3/$4/sigfx.tgz
+
+
