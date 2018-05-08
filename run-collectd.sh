@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "!!!!! run-collectd.sh !!!!!"
+echo "***** run-collectd.sh "
 
 BUNDLE_DIR=/home/vcap/deps/0/collectd
 CONFIG_DIR=/home/vcap/app/.signalfx
 
 vcap_app_jq() {
-  echo $VCAP_APPLICATION | $BUNDLE_DIR/bin/jq -r $@
+  echo $VCAP_APPLICATION | jq -r $@
 }
 
 # The token should be provided in the app manifest as an envvar
