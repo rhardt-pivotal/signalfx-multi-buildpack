@@ -8,24 +8,14 @@ else
   echo "found SIGNALFX_ACCESS_TOKEN, continuing with staging"
 fi
 
-echo "curr dir: $(pwd)"
-echo "contents: $(ls)"
-echo "vars"
-
 bin_dir=$(cd $(dirname $0); pwd) # absolute path
 root_dir=$(dirname $bin_dir)
 
 
-echo $root_dir
-ls -al $root_dir
-
-
-
-
-
-mkdir -p $3/$4/.profile.d
-cp $root_dir/run-collectd.sh $3/$4/.profile.d
-chmod +x $3/$4/.profile.d/run-collectd.sh
+mkdir -p $1/.profile.d
+# cp $root_dir/run-collectd.sh $3/$4/.profile.d
+cp $root_dir/run-collectd.sh $1/.profile.d/0001-run-collectd.sh
+chmod +x $1/.profile.d/0001-run-collectd.sh
 
 if [ -z ${SIGFX_TGZ_URI+x} ]
 then
@@ -44,8 +34,7 @@ cat <<EOF >> $3/$4/config.yml
 ---
 name: signalfx-multi-buildpack
 config:
-  java_opts:
-    preformatted_options: ["-Dcollect_d_start_output=\$(\$HOME/../deps/$4/.profile.d/run-collectd.sh)"]
+  x: y
 EOF
 
 
