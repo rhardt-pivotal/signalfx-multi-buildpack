@@ -5,7 +5,7 @@ if [[ -z "${SIGNALFX_ACCESS_TOKEN}" ]]; then
   echo "SIGNALFX_ACCESS_TOKEN env var not set"
   exit 0
 else
-  echo "found SIGNALFX_ACCESS_TOKEN, continuing with staging"
+  echo "found SIGNALFX_ACCESS_TOKEN, continuing with staging 2"
 fi
 
 bin_dir=$(cd $(dirname $0); pwd) # absolute path
